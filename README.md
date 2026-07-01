@@ -35,13 +35,13 @@ set_locale(ALL_"Portuguese")
 ABAIXO UM CÓDIGO DE UMA CALCULADORA CIENTÍCA :3
 
 #include <iostream>
-#include <cmath>
 #include <iomanip>
+#include <cmath>
 #include <limits>
 
 using namespace std;
 
-// Constante PI (compatível com qualquer compilador)
+// Constante PI
 const double PI = 3.14159265358979323846;
 
 // Função para calcular fatorial
@@ -56,7 +56,7 @@ long long fatorial(int n)
 }
 
 // Função para validar entrada numérica
-template<typename T>
+template <typename T>
 bool lerNumero(T &valor)
 {
     cin >> valor;
@@ -81,27 +81,27 @@ int main()
     do
     {
         cout << "\n=========================================\n";
-        cout << "       CALCULADORA CIENTIFICA C++\n";
+        cout << "      CALCULADORA CIENTIFICA C++\n";
         cout << "=========================================\n";
-        cout << " 1 - Soma\n";
-        cout << " 2 - Subtracao\n";
-        cout << " 3 - Multiplicacao\n";
-        cout << " 4 - Divisao\n";
-        cout << " 5 - Potencia (x^y)\n";
-        cout << " 6 - Raiz Quadrada\n";
-        cout << " 7 - Seno\n";
-        cout << " 8 - Cosseno\n";
-        cout << " 9 - Tangente\n";
-        cout << "10 - Logaritmo (base 10)\n";
-        cout << "11 - Logaritmo Natural (ln)\n";
-        cout << "12 - Fatorial\n";
-        cout << "13 - Porcentagem\n";
-        cout << "14 - Valor Absoluto\n";
-        cout << "15 - Raiz Cubica\n";
-        cout << "16 - Potencia ao Quadrado\n";
-        cout << "17 - Potencia ao Cubo\n";
-        cout << "18 - Resto da Divisao\n";
-        cout << " 0 - Sair\n";
+        cout << " 1  - Soma\n";
+        cout << " 2  - Subtracao\n";
+        cout << " 3  - Multiplicacao\n";
+        cout << " 4  - Divisao\n";
+        cout << " 5  - Potencia (x^y)\n";
+        cout << " 6  - Raiz Quadrada\n";
+        cout << " 7  - Seno\n";
+        cout << " 8  - Cosseno\n";
+        cout << " 9  - Tangente\n";
+        cout << "10  - Logaritmo (base 10)\n";
+        cout << "11  - Logaritmo Natural (ln)\n";
+        cout << "12  - Fatorial\n";
+        cout << "13  - Porcentagem\n";
+        cout << "14  - Valor Absoluto\n";
+        cout << "15  - Raiz Cubica\n";
+        cout << "16  - Potencia ao Quadrado\n";
+        cout << "17  - Potencia ao Cubo\n";
+        cout << "18  - Resto da Divisao\n";
+        cout << " 0  - Sair\n";
         cout << "=========================================\n";
 
         cout << "Escolha uma opcao: ";
@@ -112,31 +112,44 @@ int main()
             continue;
         }
 
-        switch(opcao)
+        switch (opcao)
         {
+    case 1:
+{
+    cout << "Entrou no case 1\n";
 
-        case 1:
-            cout << "Digite dois numeros: ";
-            if (lerNumero(a) && lerNumero(b))
-                cout << "Resultado = " << a + b << endl;
-            else
-                cout << "Entrada invalida.\n";
-            break;
+    double x, y;
+
+    cout << "Primeiro numero: ";
+    cin >> x;
+
+    cout << "Segundo numero: ";
+    cin >> y;
+
+    cout << "Resultado = " << x + y << endl;
+
+    system("pause");
+    break;
+}
 
         case 2:
             cout << "Digite dois numeros: ";
+
             if (lerNumero(a) && lerNumero(b))
                 cout << "Resultado = " << a - b << endl;
             else
                 cout << "Entrada invalida.\n";
+
             break;
 
         case 3:
             cout << "Digite dois numeros: ";
+
             if (lerNumero(a) && lerNumero(b))
                 cout << "Resultado = " << a * b << endl;
             else
                 cout << "Entrada invalida.\n";
+
             break;
 
         case 4:
@@ -157,6 +170,7 @@ int main()
 
         case 5:
             cout << "Base: ";
+
             if (!lerNumero(a))
             {
                 cout << "Entrada invalida.\n";
@@ -164,6 +178,7 @@ int main()
             }
 
             cout << "Expoente: ";
+
             if (!lerNumero(b))
             {
                 cout << "Entrada invalida.\n";
@@ -232,8 +247,7 @@ int main()
 
             break;
         }
-
-        case 10:
+              case 10:
             cout << "Digite um numero: ";
 
             if (!lerNumero(a))
@@ -377,8 +391,13 @@ int main()
 
         default:
             cout << "Opcao invalida!\n";
+            break;
         }
 
+    } while (opcao != 0);
+
+    return 0;
+}
     } while(opcao != 0);
 
     return 0;
